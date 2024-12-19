@@ -8,4 +8,4 @@ the plan is to have google sheets -> sql -> some kind of site (java? html?) that
 i think i have the basic steps figured out, it may be very complicated and not efficient, but it will get me started on making something.
 now i just need to learn html, that is all for now.
 
-
+Dec 19th, 2024: learning html, slow day since i am tired today
