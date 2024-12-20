@@ -9,3 +9,7 @@ i think i have the basic steps figured out, it may be very complicated and not e
 now i just need to learn html, that is all for now.
 
 Dec 19th, 2024: learning html, slow day since i am tired today
+
+Dec 20th, 2024: ran into my first roadblock, i have to host the sql database remotely in order to import from google sheets (makes sense)
+i will keep learning html and use a local database first before i look at using a remote one. dont really want to add people manually but
+that is what i will have to do for now. shoutout to all the online tutorials helping me do this.
