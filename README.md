@@ -18,3 +18,11 @@ Dec 26th, 2024: i believe i am overcomplicating my situation (i also could not f
 containerizing it) so i will move on to trying to go straight from google sheets to html using apps script. i tried connecting via php as
 well but it did not work, so i think i will take an easy route. i learned html tables and how to work them, and while the end result may
 not be what i was hoping for, i still should have something that i like in the end.
+
+January 7th, 2025: happy new year! today is january 7th, which means that classes have started again and it is my deadline for this project.
+
+in short, i succeeded doing what i wanted.
+
+in long, i accomplished this by using apps script on the google sheet created, and created the page using basic html and css. i also managed to add a search bar to it as well, which is a nice bonus. overall i learned a nice bit about html and javascript, which will help me in my upcoming classes.
+
+i will publish the code whenever i have time (and once i figure out how to, for some reason i am struggling with github), but for now this project is officially done, something i am very proud of.
