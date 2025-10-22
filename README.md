@@ -1,5 +1,10 @@
 # check-in-project
-Project for checking people in
+Project for checking people into events
+
+UPDATED: October 22nd, 2025
+Timeline below explains my experience with this, and when I said on January 7th, 2025 that I will publish the code, I obviously meant 10 months later. Looking back, this project is a mess, I had 0 clue what I was doing with HTML and Javascript, but it was fun making it. I have used this app several times now for a few Ukrainian National Youth Federation events, and they are fairly easy to use, even when somebody else tried using it. For now, this is how it is, I know the HTML file should be simpler but I was working with what I had. I am moving on to bigger projects, one for which I will hopefully learn how to *actually* use GitHub and React Native. Until next time
+
+~ Andrew
 
 Timeline:
 Dec 18th, 2024: i have not figured out the steps to do this yet, and i am new to working with GitHub, so we will see how this goes,
