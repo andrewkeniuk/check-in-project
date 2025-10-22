@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <base target="_top">
+
+    <script>
+    function myFunction() {
+      // Declare variables
+      var input, filter, table, tr, td, i, txtValue;
+      input = document.getElementById("myInput");
+      filter = input.value.toUpperCase();
+      table = document.getElementById("data-table");
+      tr = table.getElementsByTagName("tr");
+
+      // Loop through all table rows, and hide those who don't match the search query
+      for (i = 0; i < tr.length; i++) {
+        td = tr[i].getElementsByTagName("td")[3];
+        if (td) {
+          txtValue = td.textContent || td.innerText;
+          if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            tr[i].style.display = "";
+          } else {
+            tr[i].style.display = "none";
+          }
+        }
+      }
+    }
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.23/js/dataTables.bootstrap4.min.js"></script>
+    <link rel="stylesheet" type="text/css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.23/css/dataTables.bootstrap4.min.css">
+  </head>
+  <body>
+  <style>
+    .Header>h1 {
+      height: 100px; 
+      text-align: center; 
+      background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Flag_of_Ukraine.svg/1200px-Flag_of_Ukraine.svg.png');
+      background-repeat: repeat;
+      background-size: cover;
+      background-position: center;
+      color:black; 
+      top: 50px;
+      line-height: 100px;
+    }
+    .Header>h1:hover {
+      background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/Flag_of_the_Ukrainian_Insurgent_Army.svg/640px-Flag_of_the_Ukrainian_Insurgent_Army.svg.png');
+      background-repeat: repeat;
+      color:white; 
+    }
+    .myinput.large {
+      height: 22px;
+      width: 22px;
+    }
+
+    .myinput.large[type="checkbox"]:before {
+      width: 20px;
+      height: 20px;
+    }
+
+    .myinput.large[type="checkbox"]:after {
+      top: -20px;
+      width: 16px;
+      height: 16px;
+    }
+
+    /* Custom checkbox */
+    .myinput.large.custom[type="checkbox"]:checked:after {
+      background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGHRFWHRBdXRob3IAbWluZWNyYWZ0aW5mby5jb23fZidLAAAAk0lEQVQ4y2P4//8/AyUYwcAD+OzN/oMwshjRBoA0Gr8+DcbIhhBlAEyz+qZZ/7WPryHNAGTNMOxpJvo/w0/uP0kGgGwGaZbrKgfTGnLc/0nyAgiDbEY2BCRGdCDCnA2yGeYVog0Aae5MV4c7Gzk6CRqAbDM2w/EaQEgzXgPQnU2SAcTYjNMAYm3GaQCxNuM0gFwMAPUKd8XyBVDcAAAAAElFTkSuQmCC'), linear-gradient(135deg, #B1B6BE 0%, #FFF 100%);
+    }
+
+    .myinput.large.custom[type="checkbox"]:not(:disabled):checked:hover:after {
+      background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGHRFWHRBdXRob3IAbWluZWNyYWZ0aW5mby5jb23fZidLAAAAk0lEQVQ4y2P4//8/AyUYwcAD+OzN/oMwshjRBoA0Gr8+DcbIhhBlAEyz+qZZ/7WPryHNAGTNMOxpJvo/w0/uP0kGgGwGaZbrKgfTGnLc/0nyAgiDbEY2BCRGdCDCnA2yGeYVog0Aae5MV4c7Gzk6CRqAbDM2w/EaQEgzXgPQnU2SAcTYjNMAYm3GaQCxNuM0gFwMAPUKd8XyBVDcAAAAAElFTkSuQmCC'), linear-gradient(135deg, #8BB0C2 0%, #FFF 100%);
+    }
+
+    th, td {
+      padding: 15px;
+    }
+
+    .left{
+      margin-left: -900px;
+      padding: 10px;
+    }
+  </style>
+
+  <center><br>
+   <div class = "Header">
+    <h1>UNYF Regina</h1>
+   </div>
+   <div class = "left">
+      <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search names..." style = "padding:10px">
+  </div>
+   <table id="data-table" class="table table-striped table-sm table-hover table-bordered" style="width:75%" >
+    <?var tableData = getSheetData();?>
+    <?for(var i = 0; i < tableData.length; i++) { ?>
+      <?if(i == 0) { ?>
+        <tr>
+        <?for(var j = -1; j < tableData[i].length; j++) { ?>
+        <? if(j == -1) {
+          tableData[j] = "Check-In"
+        } ?>
+          <th><?= tableData[i][j] ?></th> 
+          <? } ?>
+        </tr>
+      <? } else { ?>
+        <tr>
+        <td><input type="checkbox" class="myinput large" /></td>
+        <?for(var j = 0; j < tableData[i].length; j++) { ?>
+        <td><?= tableData[i][j] ?></td>
+        <? } ?>
+        </tr>
+      <? } ?>
+    <? } ?>
+    </table></center>
+  </body>
+</html>
